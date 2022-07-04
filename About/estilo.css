@@ -1,0 +1,126 @@
+/* Valores generales */
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
+
+:root{
+    --color-inverso: rgb(244, 244, 244);
+    --color-secundario: rgb(171 169 255 / 86%);
+    --color-principal:rgb(55, 48, 189);
+    --color-parrafo:#777581;
+}
+
+body{
+    font-family: 'Biryani', sans-serif;
+    font-weight:900; 
+    background-color: var(--color-inverso);
+}
+
+.grid-container{
+    background-color: var(--color-inverso);
+    display: grid;
+    grid-template-columns: 60vw auto;
+    margin: auto;
+}
+
+    .grid-1{
+        margin: 20vh;
+    }
+
+    .grid-2{
+        margin: 20vh;
+    }
+   
+    .grid-2 h5 {
+        color: var(--color-principal);
+        display: inline-block;
+        position: absolute;
+        bottom: -15vh;
+        font-weight: 900;
+        text-align: center;
+        width: 100%;
+        font-size: 1.3rem;
+    }
+
+    #Foto{
+        background-image: url(Imagenes/SalaRoja.png);
+        height: 280px;
+        border-radius: 155px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        border: 5px solid var(--color-principal);
+        background-size: contain;
+        width: 500px;
+        box-shadow: 1px 8px 20px 0px #181378;
+        position: fixed;
+        right: 180px;
+    }
+
+body h1{
+    color: var(--color-principal);
+    font-size: 5rem;
+    margin: 0;
+    transition: opacity 2.5s ease-in-out;
+}
+
+body h3{
+    color: var(--color-secundario);
+    font-size: 3rem;
+    margin: 0rem;
+    font-weight: 600;
+    display: inline;
+    transition: opacity 2.5s ease-in-out;
+}
+
+p{
+    color: var(--color-parrafo);
+    max-width: 40vw;
+    font-size: 1.2rem;
+}
+
+span{
+    color: var(--color-principal);
+}
+
+
+header{
+    position: absolute;
+    background-color: var(--color-principal);
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    border-radius: 0 0 80px 80px;
+    top: 0;
+}
+
+.fa-house{
+    color: white;
+    font-size: 40px;
+    border: 1px solid white;
+    padding: 18px;
+    margin: 30px;
+    border-radius: 45px;
+    transition: all .5s ease-in-out; 
+}
+
+.fa-house:hover{
+    color: var(--color-principal);
+    transition: all .5s ease-in-out;   
+    background-color: var(--color-inverso);    
+}
+
+#BotonJugar{
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    color: var(--color-principal);
+    margin-top: 1rem;
+    border: 4px solid var(--color-principal);
+    border-radius: 15px;
+    font-size: 1.2rem;
+    transition: all .5s ease-in-out;  
+}
+
+#BotonJugar:hover{
+    background-color: var(--color-principal);
+    color: #F4F4F4;
+    transition: all .5s ease-in-out;        
+}

@@ -1,0 +1,86 @@
+/* Valores generales */
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
+
+:root{
+    --color-inverso: rgb(244, 244, 244);
+    --color-secundario: rgb(171 169 255 / 86%);
+    --color-principal:rgb(55, 48, 189);
+    --color-parrafo:#777581;
+}
+
+body{
+    font-family: 'Biryani', sans-serif;
+    font-weight:900; 
+    background-color: var(--color-inverso);
+    margin: auto;
+}
+
+h5 {
+        color: var(--color-principal);
+        display: inline-block;
+        position: absolute;
+        bottom: -15vh;
+        font-weight: 900;
+        text-align: center;
+        width: 100%;
+        font-size: 1.3rem;
+    }
+
+body h1{
+    color: var(--color-principal);
+    font-size: 5rem;
+    margin: 0;
+    transition: opacity 2.5s ease-in-out;
+}
+
+body h3{
+    color: var(--color-secundario);
+    font-size: 3rem;
+    margin: 0rem;
+    font-weight: 600;
+    display: inline;
+    transition: opacity 2.5s ease-in-out;
+}
+
+p{
+    color: var(--color-parrafo);
+    max-width: 40vw;
+    font-size: 1.2rem;
+}
+
+span{
+    color: var(--color-principal);
+}
+
+
+header{
+    position: absolute;
+    background-color: var(--color-principal);
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    border-radius: 0 0 80px 80px;
+    top: 0;
+}
+
+.fa-house{
+    color: white;
+    font-size: 40px;
+    border: 1px solid white;
+    padding: 18px;
+    margin: 30px;
+    border-radius: 45px;
+    transition: all .5s ease-in-out; 
+}
+
+.fa-house:hover{
+    color: var(--color-principal);
+    transition: all .5s ease-in-out;   
+    background-color: var(--color-inverso);    
+}
+
+
+main {
+    text-align: center;
+    margin-top: 5vh;
+}
