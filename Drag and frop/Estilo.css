@@ -1,0 +1,33 @@
+
+#container {
+  width: 580px;
+  height: 550px;
+  margin: 0 auto;
+  border: 1px solid black;
+  text-align: center;
+}
+.Clasificacion {  
+  width: 580px;
+  height: 120px;
+  display: flex;
+}
+.tipo {
+ flex-grow: 1;
+}
+#Sano {
+ background-color: #21c43f;
+}
+#Insano {
+  background-color: #ff4242;
+}
+#resultado {
+  text-align: center;
+  font-size: 30px;
+}
+
+.alimento{
+  margin: 10px;
+  height: 80px;
+  width: 80px;
+  cursor: move;
+}
