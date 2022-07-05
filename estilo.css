@@ -108,3 +108,25 @@ aside{
         100% { transform: rotate(-15deg); }
 }
 
+/*Responsive*/
+@media screen and (max-width: 1150px) {
+    
+    #MuelaBien {
+        width: 120px;
+        height: 120px;
+        top: 3vw;
+        right: -5vw;
+    }
+    #MuelaMal {
+        width: 110px;
+        height: 100px;
+        left: 11vw;
+        top: 17vw;
+    }
+    aside {
+        right: 10vw;
+        top: 25vw;
+        height: 20rem;
+        width: 20rem;
+    }
+}
