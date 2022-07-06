@@ -1,8 +1,10 @@
 var ElementoActual="";
+var IdContenedor="";
+var i=0;
 //Selecciona el id del elemento
 function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
     ElementoActual= ev.target.name;
+    i=0;
 }
 //Cancela acciones por defecto
 function allowDrop(ev){
@@ -10,24 +12,22 @@ function allowDrop(ev){
 }
 
 //Agrega elemento al contenedor
- function drop(ev){  
+function drop(ev){  
     ev.preventDefault();
-   
-    var data = ev.dataTransfer.getData("text");
-    //ev.target.appendChild(document.getElementById(data));
-
-    EsValido(ElementoActual, ev.target.id);
+    IdContenedor = ev.target.id;
+    if(i<1){
+        EsValido(ElementoActual, IdContenedor);
+    }
+    i++;
 }
- 
-let comidas = document.getElementsByClassName("alimento");
 
 //Chequea validez
 function EsValido(elementoId,target){
     console.log(elementoId);
     console.log(target);
     if(elementoId == target){
-        alert("Es correcto");
+       alert("Es correcto");
     }else{
-        alert("Es incorrecto");
+       alert("Es incorrecto");
     }
 }
