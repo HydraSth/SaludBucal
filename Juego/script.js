@@ -1,6 +1,7 @@
 var ElementoActual="";
 var IdContenedor="";
 var i=0;
+
 //Selecciona el id del elemento
 function drag(ev) {
     ElementoActual= ev.target.name;
@@ -21,6 +22,8 @@ function drop(ev){
     i++;
 }
 
+var boton_cerrar= document.getElementById("cerrar");
+
 //Chequea validez
 function EsValido(elementoId,target){
     console.log(elementoId);
@@ -28,6 +31,17 @@ function EsValido(elementoId,target){
     if(elementoId == target){
        alert("Es correcto");
     }else{
-       alert("Es incorrecto");
+        AbrirModal();
     }
 }
+
+//Ventana modal
+
+//Abrir modal
+function AbrirModal(){
+    Animacion();
+    document.getElementById("Modal").style.opacity = "100";
+    document.getElementById("Modal").style.zIndex= "2";
+}
+
+//Perder

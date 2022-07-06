@@ -102,3 +102,58 @@ body{
   width: 80px;
   cursor: move;
 }
+
+/* Modal */
+#Modal{
+  border: 10px solid #5a20c5;
+  border-radius: 50px;
+  padding: 50px;
+  width: 65vw;
+  height: 15vw;
+  position:absolute;
+  left:0;
+  right: 0;
+  margin:auto;
+  top:0;
+  bottom:0;
+  background-color:#ffff;
+  opacity: 0;
+  z-index: -1;
+  transition: all .5s ease-in-out; 
+}
+
+#Modal > h1{
+font-weight:800;
+font-size:5vw;
+margin: 0px;
+}
+
+#Modal > #cerrar{
+position:relative;
+top:2vw;
+left:60vw;
+}
+
+#Modal > h2{
+margin-top:10px;
+font-size:2.5vw;
+color:#757575;
+}
+
+#Modal > a{
+text-decoration:none;
+background-color:#5a20c5;
+color:#ffff;
+padding:15px;
+border-radius:15px;
+font-size:1.5vw;
+font-weight:700;
+}
+
+/* Responsive */
+@media screen and (min-width: 1200px) {
+  #container{width: 60vw;}
+  .Clasificacion{margin: 5vw 0vw 12vw 0vw;}
+}
+
+/* Animacion*/
