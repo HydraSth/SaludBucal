@@ -1,7 +1,113 @@
 /* Valores generales */
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
 
+:root{
+  --color-inverso: rgb(244, 244, 244);
+  --color-secundario: rgb(171 169 255 / 86%);
+  --color-principal:rgb(55, 48, 189);
+  --color-parrafo:#777581;
+  --color-ganar: #2cc431;
+  --color-perder: #ff3b3b;
+}
+
+/* Animacion */
+
+@keyframes Comida{
+  0% {
+    opacity: 100%;
+  }
+  50%{
+    transform:translate(-200%,-60%);
+    opacity: 70%;
+  }
+}
+
+
+@keyframes Mano{
+  0%{
+  }
+  50%{
+    transform:translate(-145%,-50%);
+  }
+}
+
+/* Animacion inicio */
 header{
+  height: 100vh;
+}
+
+#MTE{
+  position: absolute;
+  top: 35vh;
+  left: 20vw;
+  width: 10vw;
+  background-color: var(--color-principal);
+  padding: 1vw;
+  border-radius: 2vw;
+}
+#MFE{
+  position: absolute;
+  top: 35vh;
+  right: 20vw;
+  width: 10vw;
+  background-color: var(--color-principal);
+  padding: 1vw;
+  border-radius: 2vw;
+}
+
+#AlimentoExplicacion{
+    background-color: var(--color-principal);
+    display: inline-block;
+    padding: 2vw 4vw;
+    border-radius: 10vw;
+    position: absolute;
+    top:50vh;
+    right: 43vw;
+    animation-iteration-count: 2;
+    animation-duration: 3s;
+    animation-delay:3s;
+    animation-name: Comida;
+}
+
+#AlimentoExplicacion img{
+  width: 4vw;  
+}
+
+#Mano{
+  position: absolute;
+  top:50vh;
+  right: 47vw;
+  width: 20vw;
+  z-index: 1;
+  animation-iteration-count: 2;
+  animation-duration: 3s;
+  animation-delay:3s;
+  animation-name: Mano;
+}
+
+
+header h1, h3 {
+  margin: 2vw auto;
+  width: 45vw;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 4vw;
+  color: var(--color-principal);
+}
+
+h3{
+  font-size: 1.7vw;
+}
+
+span{
+  color: var(--color-principal);
+} 
+
+/* Boton home */
+#Home{
   position: absolute;
   background-color: var(--color-principal);
   height: 150px;
@@ -9,7 +115,7 @@ header{
   text-align: center;
   border-radius: 0 0 80px 80px;
   top: 0;
-}
+}  
 
 .fa-house{
   color: white;
@@ -19,29 +125,21 @@ header{
   margin: 30px;
   border-radius: 45px;
   transition: all .5s ease-in-out; 
-}
+}  
 
 .fa-house:hover{
   color: var(--color-principal);
   transition: all .5s ease-in-out;   
   background-color: var(--color-inverso);    
-}
+}  
 
-:root{
-    --color-inverso: rgb(244, 244, 244);
-    --color-secundario: rgb(171 169 255 / 86%);
-    --color-principal:rgb(55, 48, 189);
-    --color-parrafo:#777581;
-    --color-ganar: #2cc431;
-    --color-perder: #ff3b3b;
-}
-
+/* Estilo predeterminado */
 body{
     font-family: 'Biryani', sans-serif;
     font-weight:900; 
     background-color: var(--color-inverso);
 }
-   body h1{
+   /* body h1{
         color: var(--color-principal);
         font-size: 5rem;
         margin: 0;
@@ -65,7 +163,7 @@ body{
 
     span{
         color: var(--color-principal);
-    }
+    } */
 
 
 #container {
@@ -116,7 +214,7 @@ body{
   left:0;
   right: 0;
   margin:auto;
-  top:0;
+  top: 200vh;
   bottom:0;
   background-color:#ffff;
   opacity: 0;
@@ -175,7 +273,7 @@ font-weight:900;
   left:0;
   right: 0;
   margin:auto;
-  top:0;
+  top: 200vh;
   bottom:0;
   background-color:#ffff;
   opacity: 0;
