@@ -48,9 +48,6 @@ path{
 main{
     margin: 6vw 6vw;
 }
-    main #NumEni{
-        font-size: 3.15rem;
-    }
 
     a{
         text-decoration: none;

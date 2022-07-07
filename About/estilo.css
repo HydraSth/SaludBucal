@@ -39,9 +39,21 @@ body{
         width: 100%;
         font-size: 1.3rem;
     }
+    
+    .grid-2 h6 {
+        color: var(--color-principal);
+        display: inline-block;
+        position: absolute;
+        bottom: -20vh;
+        font-weight: 900;
+        opacity: 40%;
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+    }
 
     #Foto{
-        background-image: url(Imagenes/SalaRoja.png);
+        background-image: url(Imagenes/Sala.jpg);
         height: 280px;
         border-radius: 155px;
         background-repeat: no-repeat;
@@ -73,7 +85,14 @@ body h3{
 p{
     color: var(--color-parrafo);
     max-width: 40vw;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    text-align: justify;
+}
+
+h2{
+    color: var(--color-principal);
+    font-weight: 900;
+    font-size: 1.5vw;
 }
 
 span{

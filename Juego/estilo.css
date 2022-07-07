@@ -32,6 +32,8 @@ header{
     --color-secundario: rgb(171 169 255 / 86%);
     --color-principal:rgb(55, 48, 189);
     --color-parrafo:#777581;
+    --color-ganar: #2cc431;
+    --color-perder: #ff3b3b;
 }
 
 body{
@@ -103,9 +105,68 @@ body{
   cursor: move;
 }
 
-/* Modal */
+/* Modal perder */
+#Modal-G{
+  border: 10px solid var(--color-ganar);
+  border-radius: 50px;
+  padding: 50px;
+  width: 65vw;
+  height: 10vw;
+  position:absolute;
+  left:0;
+  right: 0;
+  margin:auto;
+  top:0;
+  bottom:0;
+  background-color:#ffff;
+  opacity: 0;
+  z-index: -1;
+  transition: all .5s ease-in-out; 
+  box-shadow: 1px 1px 20px 9px #ffff359c;
+}
+
+#Modal-G > h1{
+font-weight:800;
+font-size:5vw;
+margin: 0px;
+color: var(--color-ganar);
+position: absolute;
+top:100px;
+}
+
+#Modal-G > #cerrar{
+position:relative;
+top:2vw;
+left:60vw;
+}
+
+#Modal-G > h2{
+margin-top:10px;
+font-size:2.5vw;
+color:#757575;
+}
+
+#Modal-G > a{
+text-decoration:none;
+background-color:#5a20c5;
+color:#ffff;
+padding:15px;
+border-radius:15px;
+font-size:1.5vw;
+font-weight:900;
+}
+
+#DienteSticker{
+  height: -webkit-fill-available;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  right: 50px;
+}
+
+/* Modal perder */
 #Modal{
-  border: 10px solid #5a20c5;
+  border: 10px solid var(--color-perder);
   border-radius: 50px;
   padding: 50px;
   width: 65vw;
@@ -120,12 +181,14 @@ body{
   opacity: 0;
   z-index: -1;
   transition: all .5s ease-in-out; 
+  box-shadow: 1px 1px 20px 9px #ffff359c;
 }
 
 #Modal > h1{
 font-weight:800;
 font-size:5vw;
 margin: 0px;
+color:var(--color-perder);
 }
 
 #Modal > #cerrar{
@@ -142,12 +205,20 @@ color:#757575;
 
 #Modal > a{
 text-decoration:none;
-background-color:#5a20c5;
+background-color:var(--color-perder);
 color:#ffff;
 padding:15px;
 border-radius:15px;
 font-size:1.5vw;
-font-weight:700;
+font-weight:900;
+}
+
+#C-6, #C-11, #C-20, #C-22, #C-15 {
+  width: 50px;
+}
+
+#C-7, #C-16 {
+    height: 60px;
 }
 
 /* Responsive */
