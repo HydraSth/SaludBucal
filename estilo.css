@@ -32,7 +32,7 @@ body{
     p{
         color: var(--color-parrafo);
         max-width: 40vw;
-        font-size: 1.2rem;
+        font-size: 2vw;
     }
 
     span{
