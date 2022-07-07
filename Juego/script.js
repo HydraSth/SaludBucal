@@ -3,6 +3,16 @@ var IdContenedor="";
 var IdSeleccion="";
 var i=0;
 
+const presentacion= document.getElementById("explicacion");
+const juego= document.getElementById("container");
+juego.remove();
+setTimeout(() => {
+    presentacion.remove();
+    document.getElementById("header").style.height = "0";
+    document.body.appendChild(juego);
+}, 12000);
+
+
 //Selecciona el id del elemento
 function drag(ev) {
     ElementoActual= ev.target.name;
