@@ -7,11 +7,14 @@ const presentacion= document.getElementById("explicacion");
 const juego= document.getElementById("container");
 juego.remove();
 setTimeout(() => {
+    SaltarIntro();
+}, 7200);
+
+function SaltarIntro(){
     presentacion.remove();
     document.getElementById("header").style.height = "0";
-    document.body.appendChild(juego);
-}, 12000);
-
+    document.body.appendChild(juego);    
+}
 
 //Selecciona el id del elemento
 function drag(ev) {

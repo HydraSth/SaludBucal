@@ -8,6 +8,7 @@
   --color-parrafo:#777581;
   --color-ganar: #2cc431;
   --color-perder: #ff3b3b;
+  --color-saltarintro: rgb(55, 48, 189);
 }
 
 /* Animacion */
@@ -64,7 +65,7 @@ header{
     top:50vh;
     right: 43vw;
     animation-iteration-count: 2;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-delay:3s;
     animation-name: Comida;
 }
@@ -80,11 +81,39 @@ header{
   width: 20vw;
   z-index: 1;
   animation-iteration-count: 2;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-delay:3s;
   animation-name: Mano;
 }
 
+#SaltarIntro {
+  border-radius: 15px;
+  background-color: var(--color-saltarintro);
+  border: solid 5px var(--color-saltarintro);
+  padding: 10px;
+  font-size: 2vw;
+  color: var(--color-inverso);
+  position: absolute;
+  top: 85vh;
+  right: 42vw;
+  box-shadow: 2px 2px 17px 12px var(--color-saltarintro);
+  animation: color;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+}
+
+@keyframes color {
+  from {
+    background-color:var(--color-saltarintro);
+    border:var(--color-saltarintro);
+    box-shadow: 2px 2px 17px 12px var(--color-saltarintro);
+  }
+  100% { 
+    background-color:var(--color-perder);
+    border:var(--color-perder);
+    box-shadow: 2px 2px 17px 12px var(--color-perder);
+  }
+}
 
 header h1, h3 {
   margin: 2vw auto;
