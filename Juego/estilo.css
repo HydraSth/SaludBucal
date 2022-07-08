@@ -34,7 +34,7 @@
 
 /* Animacion inicio */
 header{
-  height: 100vh;
+  height: 80vh;
 }
 
 #MTE{
@@ -354,4 +354,10 @@ font-weight:900;
   .Clasificacion{margin: 5vw 0vw 12vw 0vw;}
 }
 
+@media screen and (max-width: 1199px) {
+  #container{
+    position: relative;
+    top: -80px;
+  }
+}
 /* Animacion*/
