@@ -1,12 +1,13 @@
 var ElementoActual="";
 var IdContenedor="";
+var claseContenedor="";
 var IdSeleccion="";
 var i=0;
 
 const presentacion= document.getElementById("explicacion");
 const juego= document.getElementById("container");
 juego.remove();
-setTimeout(() => {
+ setTimeout(() => {
     SaltarIntro();
 }, 7200);
 
@@ -31,8 +32,9 @@ function allowDrop(ev){
 function drop(ev){  
     ev.preventDefault();
     IdContenedor = ev.target.id;
+    claseContenedor = ev.target.className;
     if(i<1){
-        EsValido(ElementoActual, IdContenedor);
+        EsValido(ElementoActual, IdContenedor, claseContenedor);
     }
     i++;
 }
@@ -40,10 +42,10 @@ function drop(ev){
 var boton_cerrar= document.getElementById("cerrar");
 
 //Chequea validez
-function EsValido(elementoId,target){
-    if(elementoId == target){
+function EsValido(elementoId,target,claseDestino){
+    if(elementoId == target && claseDestino != 'alimento'){
        AbrirModalG();
-    }else{
+    }else if(elementoId != target && claseDestino != 'alimento'){
         AbrirModal();
     }
 }

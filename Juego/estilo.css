@@ -87,6 +87,8 @@ header{
 }
 
 #SaltarIntro {
+  cursor: pointer;
+  z-index: 10;
   border-radius: 15px;
   background-color: var(--color-saltarintro);
   border: solid 5px var(--color-saltarintro);
@@ -226,10 +228,10 @@ body{
   font-size: 30px;
 }
 .alimento{
+  cursor: pointer;
   margin: 10px;
   height: 80px;
   width: 80px;
-  cursor: move;
 }
 
 /* Modal perder */
