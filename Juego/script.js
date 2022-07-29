@@ -43,9 +43,9 @@ var boton_cerrar= document.getElementById("cerrar");
 
 //Chequea validez
 function EsValido(elementoId,target,claseDestino){
-    if(elementoId == target && claseDestino != 'alimento'){
+    if(elementoId == target && claseDestino != 'alimento' && claseDestino != 'cuerpoPagina'){
        AbrirModalG();
-    }else if(elementoId != target && claseDestino != 'alimento'){
+    }else if(elementoId != target && claseDestino != 'alimento' && claseDestino != 'cuerpoPagina'){
         AbrirModal();
     }
 }

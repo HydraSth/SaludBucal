@@ -96,8 +96,8 @@ header{
   font-size: 2vw;
   color: var(--color-inverso);
   position: absolute;
-  top: 85vh;
-  right: 42vw;
+  top: 10vh;
+  right: 7vw;
   box-shadow: 2px 2px 17px 12px var(--color-saltarintro);
   animation: color;
   animation-iteration-count: infinite;
@@ -168,6 +168,7 @@ span{
 body{
     font-family: 'Biryani', sans-serif;
     font-weight:900; 
+    overflow-y:hidden!important;
     background-color: var(--color-inverso);
 }
    /* body h1{
@@ -198,7 +199,8 @@ body{
 
 
 #container {
-  height: 500px;
+  height: 110vh;
+  overflow: hidden;
   margin: 30px auto;
   border-radius: 45px;
   text-align: center;
@@ -229,9 +231,9 @@ body{
 }
 .alimento{
   cursor: pointer;
-  margin: 10px;
-  height: 80px;
-  width: 80px;
+  margin: 10px 27px;
+  height: 90px;
+  width: 90px;
 }
 
 /* Modal perder */
@@ -352,7 +354,7 @@ font-weight:900;
 
 /* Responsive */
 @media screen and (min-width: 1200px) {
-  #container{width: 60vw;}
+  #container{width: 80vw;}
   .Clasificacion{margin: 5vw 0vw 12vw 0vw;}
 }
 
