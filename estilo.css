@@ -46,7 +46,7 @@ path{
 }
 /* Body */
 main{
-    margin: 6vw 6vw;
+    margin: 1vw 6vw;
 }
 
     a{
@@ -73,9 +73,9 @@ aside{
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    right: 15vw;
-    top: 10vw;
-    height: 25rem;
+    right: 3vw;
+    top: 15vw;
+    height: 20rem;
     width: 25rem;
 }
    
@@ -121,8 +121,8 @@ aside{
         top: 17vw;
     }
     aside {
-        right: 10vw;
-        top: 25vw;
+        right: 3vw;
+        top: 15vw;
         height: 20rem;
         width: 20rem;
     }

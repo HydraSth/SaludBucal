@@ -17,16 +17,13 @@ body{
 .grid-container{
     background-color: var(--color-inverso);
     display: grid;
-    grid-template-columns: 60vw auto;
+    grid-template-columns: 53vw auto;
     margin: auto;
 }
 
     .grid-1{
-        margin: 20vh 20vh 0vh 20vh;
-    }
-
-    .grid-2{
-        margin: 20vh;
+        margin: 35vh 20vh 0vh 20vh;
+        width: 40vw;
     }
    
     .grid-2 h5 {
@@ -146,14 +143,15 @@ header{
 /*Responsive*/
 @media screen and (max-width: 1200px) {
     #Foto {
-        height: 20vw;
-        width: 35.7vw;
-        top: 20vw;
-        right: 5vw;
+        height: 22.5vw;
+        width: 40vw;
+        top: 16vw;
+        right: 4vw;
     }
     body h1 {
-        font-size: 7vw;
-        margin: 2vw 0vw;
+        font-size: 4vw;
+        margin-top: 11vw;
+        margin-left: 4vw;
     }
     p {
         font-size: 2vw;
