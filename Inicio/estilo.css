@@ -20,72 +20,24 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
 }
-
-.fa-solid, .fas{
-    color: var(--color-principal);
-}
-
-    .grid-1{
-        margin-top: 20vh;
-        width: 40vw;
-    }
-   
-    .grid-2 h5 {
+    h1{
+        font-size: 3em;
+        margin: 0.3em 0;
         color: var(--color-principal);
         font-weight: 900;
-        width: 100%;
-        font-size: 1.3rem;
-        margin: 10px;
     }
     
-    aside{
-        display: inline-block;
-        text-align: center;
+    .grid-1{
+        width: 40vw;
     }
 
-    .grid-2 h6 {
-        color: var(--color-principal);
-        font-weight: 900;
-        opacity: 40%;
-        width: 100%;
-        font-size: 1rem;
-        margin: 10px;
+    .grid-1 h2{
+        font-size: 2em;
+        color: var(--color-secundario);
+        margin: 0;
     }
-
-    #Foto{
-        display: inline-block;
-        height: 19.6vw;
-        width: 35vw;
-        border-radius: 155px;
-        background-repeat: no-repeat;
-        background-image: url(Imagenes/Sala.jpg);
-        border: 5px solid var(--color-principal);
-        background-size: contain;
-        box-shadow: 1px 8px 20px 0px #181378;
-        margin: 0 auto;
-    }
-
-    .grid-2{
-        display: grid;
-    }
-
-body h1{
-    color: var(--color-principal);
-    font-size: 4vw;
-    display: inline-block;
-    transition: opacity 2.5s ease-in-out;
-    margin: auto;
-}
-body h3{
-    color: var(--color-secundario);
-    font-size: 3rem;
-    margin: 0rem;
-    font-weight: 600;
-    display: inline;
-    transition: opacity 2.5s ease-in-out;
-}
 
 p{
     color: var(--color-parrafo);
@@ -94,10 +46,8 @@ p{
     text-align: justify;
 }
 
-h2{
-    color: var(--color-principal);
-    font-weight: 900;
-    font-size: 1.5vw;
+#Burbuja{
+    height: 30vw;
 }
 
 span{
@@ -140,7 +90,7 @@ header{
     margin-top: 1rem;
     border: 0.3vw solid var(--color-principal);
     border-radius: 15px;
-    font-size: 1vw;
+    font-size: 1.5em;
     transition: all .5s ease-in-out;
 }
 
@@ -150,20 +100,43 @@ header{
     transition: all .5s ease-in-out;        
 }
 
-/* Responsive
-@media screen and (max-width: 1200px) {
-    #Foto {
-        height: 22.5vw;
-        width: 40vw;
-        top: 16vw;
-        right: 4vw;
+.Dientes{
+    width: 11vw;
+    animation: 4000ms Girar infinite;
+    position: absolute;
+    right: 30vw;
+    top: 150px;
+}
+
+#DienteMal{
+    position: absolute;
+    right: 25vw;
+    top: 50vh;
+}
+/* Animacion */
+
+@keyframes Girar{
+    from { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(-15deg); }
+}
+
+@media (max-width: 1200px){
+    .Dientes{
+        top: 35vh;
     }
-    body h1 {
+}
+ 
+@media (max-width: 750px){
+    .flex-container{
+        justify-content: unset;
+        padding: 0VW 10VW;
+    }
+    .grid-1 {
+        width: 100vw;
+    }
+    p{
+        max-width: 57vw;
         font-size: 4vw;
-        margin-top: 11vw;
-        margin-left: 4vw;
     }
-    p {
-        font-size: 2vw;
-    }
-} */
+}
