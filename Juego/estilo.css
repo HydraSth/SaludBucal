@@ -1,0 +1,367 @@
+/* Valores generales */
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
+
+:root{
+  --color-inverso: rgb(244, 244, 244);
+  --color-secundario: rgb(171 169 255 / 86%);
+  --color-principal:rgb(55, 48, 189);
+  --color-parrafo:#777581;
+  --color-ganar: #2cc431;
+  --color-perder: #ff3b3b;
+  --color-saltarintro: rgb(55, 48, 189);
+}
+
+/* Animacion */
+
+@keyframes Comida{
+  0% {
+    opacity: 100%;
+  }
+  50%{
+    transform:translate(-200%,0%);
+    opacity: 70%;
+  }
+}
+
+
+@keyframes Mano{
+  0%{
+  }
+  50%{
+    transform:translate(-140%, 0%);
+  }
+}
+
+/* Animacion inicio */
+header{
+  height: 80vh;
+}
+
+#explicacion{
+  margin-top: 25vh;
+}
+
+#MTE{
+  position: absolute;
+  top: 55vh;
+  left: 20vw;
+  width: 10vw;
+  background-color: var(--color-principal);
+  padding: 1vw;
+  border-radius: 2vw;
+}
+#MFE{
+  position: absolute;
+  top: 55vh;
+  right: 20vw;
+  width: 10vw;
+  background-color: var(--color-principal);
+  padding: 1vw;
+  border-radius: 2vw;
+}
+
+#AlimentoExplicacion{
+  background-color: var(--color-principal);
+  display: inline-block;
+  padding: 0vw 2vw;
+  border-radius: 10vw;
+  position: absolute;
+  top: 55vh;
+  right: 43vw;
+  animation-iteration-count: 2;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-name: Comida;
+}
+
+#AlimentoExplicacion img{
+  width: 8vw;
+}
+
+#Mano{
+  position: absolute;
+  top:50vh;
+  right: 47vw;
+  width: 20vw;
+  z-index: 1;
+  animation-iteration-count: 2;
+  animation-duration: 2s;
+  animation-delay:3s;
+  animation-name: Mano;
+}
+
+#SaltarIntro {
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 15px;
+  background-color: var(--color-saltarintro);
+  border: solid 5px var(--color-saltarintro);
+  padding: 10px;
+  font-size: 2vw;
+  color: var(--color-inverso);
+  position: absolute;
+  top: 9vh;
+  text-align: center;
+  left: 43vw;
+  width: 14vw;
+  box-shadow: 2px 2px 17px 12px var(--color-saltarintro);
+  animation: color;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+}
+
+@keyframes color {
+  from {
+    background-color:var(--color-saltarintro);
+    border:var(--color-saltarintro);
+    box-shadow: 2px 2px 17px 12px var(--color-saltarintro);
+  }
+  100% { 
+    background-color:var(--color-perder);
+    border:var(--color-perder);
+    box-shadow: 2px 2px 17px 12px var(--color-perder);
+  }
+}
+
+header h1, h3 {
+  margin: 2vw auto;
+  width: 45vw;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 4vw;
+  color: var(--color-principal);
+}
+
+h3{
+  font-size: 1.7vw;
+}
+
+span{
+  color: var(--color-principal);
+} 
+
+/* Boton home */
+#Home{
+  position: absolute;
+  background-color: var(--color-principal);
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  border-radius: 0 0 80px 80px;
+  top: 0;
+}  
+
+.fa-house{
+  color: white;
+  font-size: 40px;
+  border: 1px solid white;
+  padding: 18px;
+  margin: 30px;
+  border-radius: 45px;
+  transition: all .5s ease-in-out; 
+}  
+
+.fa-house:hover{
+  color: var(--color-principal);
+  transition: all .5s ease-in-out;   
+  background-color: var(--color-inverso);    
+}  
+
+/* Estilo predeterminado */
+body{
+    font-family: 'Biryani', sans-serif;
+    font-weight:900; 
+    overflow-y:hidden!important;
+    background-color: var(--color-inverso);
+}
+   /* body h1{
+        color: var(--color-principal);
+        font-size: 5rem;
+        margin: 0;
+        transition: opacity 2.5s ease-in-out;
+    }
+
+   body h3{
+        color: var(--color-secundario);
+        font-size: 3rem;
+        margin: 0rem;
+        font-weight: 600;
+        display: inline;
+        transition: opacity 2.5s ease-in-out;
+    }
+
+    p{
+        color: var(--color-parrafo);
+        max-width: 40vw;
+        font-size: 1.2rem;
+    }
+
+    span{
+        color: var(--color-principal);
+    } */
+
+
+#container {
+  height: 85vh;
+  overflow: hidden;
+  margin: 30px auto;
+  border-radius: 45px;
+  text-align: center;
+  width: 80vw;
+}
+
+.Clasificacion {  
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10vw 0vw;
+}
+
+.tipo {
+ flex-grow: 1;
+}
+
+#Insano img, #Sano img{
+  background-color: var(--color-principal);
+  height: 15vw;
+  padding: 2vw;
+  border-radius: 40px;
+}
+
+#resultado {
+  text-align: center;
+  font-size: 30px;
+}
+.alimento{
+  cursor: pointer;
+  margin: 10px 27px;
+  height: 90px;
+  width: 90px;
+}
+
+/* Modal perder */
+#Modal-G{
+  border: 10px solid var(--color-ganar);
+  border-radius: 50px;
+  padding: 50px;
+  width: 65vw;
+  height: 10vw;
+  position:absolute;
+  left:0;
+  right: 0;
+  margin:auto;
+  top: 0vh;
+  bottom:0;
+  background-color:#ffff;
+  opacity: 0;
+  z-index: -1;
+  transition: all .5s ease-in-out; 
+  box-shadow: 1px 1px 20px 9px #ffff359c;
+}
+
+#Modal-G > h1{
+font-weight:800;
+font-size:5vw;
+margin: 0px;
+color: var(--color-ganar);
+position: absolute;
+top:100px;
+}
+
+#Modal-G > #cerrar{
+position:relative;
+top:2vw;
+left:60vw;
+}
+
+#Modal-G > h2{
+margin-top:10px;
+font-size:2.5vw;
+color:#757575;
+}
+
+#Modal-G > a{
+text-decoration:none;
+background-color:#5a20c5;
+color:#ffff;
+padding:15px;
+border-radius:15px;
+font-size:1.5vw;
+font-weight:900;
+}
+
+#DienteSticker{
+  height: -webkit-fill-available;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  right: 50px;
+}
+
+/* Modal perder */
+#Modal{
+  border: 10px solid var(--color-perder);
+  border-radius: 50px;
+  padding: 50px;
+  width: 65vw;
+  height: 15vw;
+  position:absolute;
+  left:0;
+  right: 0;
+  margin:auto;
+  top: 0;
+  bottom:0;
+  background-color:#ffff;
+  opacity: 0;
+  z-index: -1;
+  transition: all .5s ease-in-out; 
+  box-shadow: 1px 1px 20px 9px #ffff359c;
+}
+
+#Modal > h1{
+font-weight:800;
+font-size:5vw;
+margin: 0px;
+color:var(--color-perder);
+}
+
+#Modal > #cerrar{
+position:relative;
+top:2vw;
+left:60vw;
+}
+
+#Modal > h2{
+margin-top:10px;
+font-size:2.5vw;
+color:#757575;
+}
+
+#Modal > a{
+text-decoration:none;
+background-color:var(--color-perder);
+color:#ffff;
+padding:15px;
+border-radius:15px;
+font-size:1.5vw;
+font-weight:900;
+}
+
+
+/* Responsive */
+@media screen and (min-width: 1200px) {
+  #container{width: 80vw;}
+  .Clasificacion{margin: 5vw 0vw 12vw 0vw;}
+}
+
+@media screen and (max-width: 1199px) {
+  #container{
+    height: 105vh;
+    position: relative;
+    top: -80px;
+  }
+}
+/* Animacion*/

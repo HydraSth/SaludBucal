@@ -1,0 +1,142 @@
+/* Valores generales */
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
+
+:root{
+    --color-inverso: rgb(244, 244, 244);
+    --color-secundario: rgb(171 169 255 / 86%);
+    --color-principal:rgb(55, 48, 189);
+    --color-parrafo:#777581;
+}
+
+body{
+    font-family: 'Biryani', sans-serif;
+    font-weight:900; 
+    background-color: var(--color-inverso);
+}
+
+.flex-container{
+    background-color: var(--color-inverso);
+    grid-template-columns: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+    h1{
+        font-size: 3em;
+        margin: 0.3em 0;
+        color: var(--color-principal);
+        font-weight: 900;
+    }
+    
+    .grid-1{
+        width: 40vw;
+    }
+
+    .grid-1 h2{
+        font-size: 2em;
+        color: var(--color-secundario);
+        margin: 0;
+    }
+
+p{
+    color: var(--color-parrafo);
+    max-width: 35vw;
+    font-size: 1.5vw;
+    text-align: justify;
+}
+
+#Burbuja{
+    height: 30vw;
+}
+
+span{
+    color: var(--color-principal);
+}
+
+
+header{
+    position: absolute;
+    background-color: var(--color-principal);
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    border-radius: 0 0 80px 80px;
+    top: 0;
+    left: 70px;
+}
+
+.fa-house{
+    color: white;
+    font-size: 40px;
+    border: 1px solid white;
+    padding: 18px;
+    margin: 30px;
+    border-radius: 45px;
+    transition: all .5s ease-in-out; 
+}
+
+.fa-house:hover{
+    color: var(--color-principal);
+    transition: all .5s ease-in-out;   
+    background-color: var(--color-inverso);    
+}
+
+#BotonJugar{
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    color: var(--color-principal);
+    margin-top: 1rem;
+    border: 0.3vw solid var(--color-principal);
+    border-radius: 15px;
+    font-size: 1.5em;
+    transition: all .5s ease-in-out;
+}
+
+#BotonJugar:hover{
+    background-color: var(--color-principal);
+    color: #F4F4F4;
+    transition: all .5s ease-in-out;        
+}
+
+.Dientes{
+    width: 11vw;
+    animation: 4000ms Girar infinite;
+    position: absolute;
+    right: 30vw;
+    top: 150px;
+}
+
+#DienteMal{
+    position: absolute;
+    right: 25vw;
+    top: 50vh;
+}
+/* Animacion */
+
+@keyframes Girar{
+    from { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(-15deg); }
+}
+
+@media (max-width: 1200px){
+    .Dientes{
+        top: 35vh;
+    }
+}
+ 
+@media (max-width: 750px){
+    .flex-container{
+        justify-content: unset;
+        padding: 0VW 10VW;
+    }
+    .grid-1 {
+        width: 100vw;
+    }
+    p{
+        max-width: 57vw;
+        font-size: 4vw;
+    }
+}

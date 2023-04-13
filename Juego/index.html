@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="DragDropTouch" src="https://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"></script>
+    <title>Juego</title>
+    <script src="https://kit.fontawesome.com/5137b56f35.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../Imagenes/MuelaBien.png">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body id="body">
+    <header id="header"> 
+        <section id="Home">
+            <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+        </section>
+        <section id="explicacion">
+            <h1>¿Como jugar?</h1>
+            <h3>Arrastra el alimento hacia el diente feliz si es saludable, en caso contrario arrastralo hacia el diente triste.</h3>
+            <div>
+                <img  id="MFE" src="../Imagenes/MuelaMal.png" alt="Comida sana">
+                <img  id="MTE" src="../Imagenes/MuelaBien.png" alt="Comida insana">
+            </div>
+            <img src="Imagenes/ManoExplicacion.png" id="Mano" alt="Mano">
+            <div id="AlimentoExplicacion">
+                <img src="Comida/Pollo.png" alt="Pollo">
+            </div>
+            <a id="SaltarIntro" readonly="readonly" onclick="SaltarIntro()">Saltar intro</a>
+        </section>
+    </header>
+    <section id="container" ondrop="drop(event)" ondragover="allowDrop(event)" class="cuerpoPagina">
+        <div class="Clasificacion">
+            <div class="tipo" id="Sano" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img  class="tipo" id="Sano" ondrop="drop(event)" ondragover="allowDrop(event)" src="../Imagenes/MuelaBien.png" alt="Comida sana">
+            </div>
+            <div class="tipo" id="Insano" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img class="tipo" id="Insano" ondrop="drop(event)" ondragover="allowDrop(event)" src="../Imagenes/MuelaMal.png" alt="Comida insana">
+            </div>
+        </div>
+        <img id="C-1" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Alfajor.png"/>
+        <img id="C-2" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Filete.png"/>
+        <img id="C-3" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/CocaCola.png"/>
+        <img id="C-4" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Flan.png"/>
+        <img id="C-6" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Helado.png"/>
+        <img id="C-7" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Limon.png"/>
+        <img id="C-8" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Muffin.png"/>
+        <img id="C-9" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Pan.png"/>
+        <img id="C-10" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Pochoclos.png"/>
+        <img id="C-11" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Pollo.png"/>
+        <img id="C-12" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Tomates.png"/>
+        <img id="C-13" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Torta.png"/>
+        <img id="C-14" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Zanahoria.png"/>
+        <img id="C-15" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Leche.png"/>
+        <img id="C-17" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Dona.png"/>
+        <img id="C-18" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Huevos.png"/>
+        <img id="C-19" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Queso.png"/>
+        <img id="C-21" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Jugo.png"/>
+        <img id="C-23" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Pescado.png"/>
+        <img id="C-24" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Palta.png"/>
+        <img id="C-25" name="Sano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Ensalada.png"/>
+        <img id="C-26" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Banana.png"/>
+    </section>
+    <section id="Modal">
+        <h1>Ups!</h1>
+        <h2>No elegiste una opcion correcta, gracias por jugar.</h2>
+        <a href="">VOLVER A JUGAR</a>
+    </section>  
+    <section id="Modal-G">
+        <h1>Felicitaciones!</h1>
+        <img id="DienteSticker" src="Imagenes/Cepillo.png" alt="Correcto">
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
