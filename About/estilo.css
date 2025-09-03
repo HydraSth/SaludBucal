@@ -1,26 +1,45 @@
 /* Valores generales */
-@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --color-inverso: rgb(244, 244, 244);
-    --color-secundario: rgb(171 169 255 / 86%);
-    --color-principal:rgb(55, 48, 189);
-    --color-parrafo:#777581;
+    --color-inverso: rgb(255, 255, 255);
+    --color-secundario: #FF6B6B;
+    --color-principal: #FF4757;
+    --color-parrafo: #2C3E50;
+    --color-accent: #FFB3BA;
+    --color-success: #2ECC71;
+    --color-warning: #F39C12;
+    --color-danger: #E74C3C;
+    --color-info: #3498DB;
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.2);
+    --border-radius-large: 25px;
+    --border-radius-medium: 15px;
+    --border-radius-small: 10px;
 }
 
 body{
-    font-family: 'Biryani', sans-serif;
-    font-weight:900; 
-    background-color: var(--color-inverso);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500; 
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 30%, #DEE2E6 70%, #CED4DA 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .flex-container{
-    background-color: var(--color-inverso);
-    grid-template-columns: 50vw;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .fa-solid, .fas{
@@ -28,55 +47,40 @@ body{
 }
 
     .grid-1{
-        margin-top: 20vh;
-        width: 40vw;
+        margin-top: 5vh;
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        box-sizing: border-box;
     }
    
-    .grid-2 h5 {
-        color: var(--color-principal);
-        font-weight: 900;
-        width: 100%;
-        font-size: 1.3rem;
-        margin: 10px;
-    }
-    
-    aside{
-        display: inline-block;
-        text-align: center;
-    }
 
-    .grid-2 h6 {
-        color: var(--color-principal);
-        font-weight: 900;
-        opacity: 40%;
-        width: 100%;
-        font-size: 1rem;
-        margin: 10px;
-    }
 
-    #Foto{
-        display: inline-block;
-        height: 19.6vw;
-        width: 35vw;
-        border-radius: 155px;
-        background-repeat: no-repeat;
-        background-image: url(Imagenes/Sala.jpg);
-        border: 5px solid var(--color-principal);
-        background-size: contain;
-        box-shadow: 1px 8px 20px 0px #181378;
-        margin: 0 auto;
-    }
-
-    .grid-2{
-        display: grid;
-    }
+/* Sección de bienvenida */
+.welcome-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
 body h1{
     color: var(--color-principal);
-    font-size: 4vw;
-    display: inline-block;
-    transition: opacity 2.5s ease-in-out;
-    margin: auto;
+    font-family: 'Fredoka', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
 }
 body h3{
     color: var(--color-secundario);
@@ -87,17 +91,29 @@ body h3{
     transition: opacity 2.5s ease-in-out;
 }
 
-p{
+.welcome-section p{
     color: var(--color-parrafo);
-    max-width: 35vw;
-    font-size: 1.5vw;
-    text-align: justify;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 10px 0;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    border: none;
 }
 
-h2{
-    color: var(--color-principal);
-    font-weight: 900;
-    font-size: 1.5vw;
+.welcome-section h2{
+    color: var(--color-secundario);
+    font-family: 'Fredoka', cursive;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin: 15px 0 0 0;
+    letter-spacing: 0.5px;
 }
 
 span{
@@ -107,63 +123,883 @@ span{
 
 header{
     position: absolute;
-    background-color: var(--color-principal);
-    height: 150px;
-    width: 150px;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+    height: 60px;
+    width: 60px;
     text-align: center;
-    border-radius: 0 0 80px 80px;
+    border-radius: 0 0 30px 30px;
     top: 0;
-    left: 70px;
+    left: 20px;
+    box-shadow: 
+        0 4px 15px rgba(255, 107, 107, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(255, 107, 107, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 60px;
+        width: 60px;
+        left: 20px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .fa-house {
+        font-size: 18px;
+        padding: 10px;
+        margin: 0;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 60px;
+        width: 60px;
+        left: 20px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .fa-house {
+        font-size: 18px;
+        padding: 10px;
+        margin: 0;
+        border-radius: 25px;
+    }
 }
 
 .fa-house{
     color: white;
-    font-size: 40px;
-    border: 1px solid white;
-    padding: 18px;
-    margin: 30px;
-    border-radius: 45px;
-    transition: all .5s ease-in-out; 
+    font-size: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    margin: 0;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .fa-house:hover{
     color: var(--color-principal);
-    transition: all .5s ease-in-out;   
-    background-color: var(--color-inverso);    
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 #BotonJugar{
     text-decoration: none;
     display: inline-block;
-    padding: 15px;
-    color: var(--color-principal);
-    margin-top: 1rem;
-    border: 0.3vw solid var(--color-principal);
-    border-radius: 15px;
-    font-size: 1vw;
-    transition: all .5s ease-in-out;
+    padding: 20px 30px;
+    color: white;
+    margin: 1rem 0.5rem;
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    border: none;
+    border-radius: var(--border-radius-large);
+    font-family: 'Fredoka', cursive;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    min-width: 220px;
+    position: relative;
+    overflow: hidden;
+    line-height: 1.3;
 }
 
 #BotonJugar:hover{
-    background-color: var(--color-principal);
-    color: #F4F4F4;
-    transition: all .5s ease-in-out;        
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-principal) 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(41, 128, 185, 0.4);
+    color: white;
 }
 
-/* Responsive
+#BotonJugar:active{
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
+}
+
+#BotonJugar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+#BotonJugar:hover::before{
+    left: 100%;
+}
+
+/* Sección de juegos disponibles */
+.juegos-disponibles {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-large);
+    padding: 25px;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(15px);
+    border: 3px solid var(--color-accent);
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.juegos-disponibles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-principal), var(--color-secundario), var(--color-accent));
+}
+
+.juegos-disponibles h3 {
+    color: var(--color-principal);
+    font-family: 'Fredoka', cursive;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 25px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.juego-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--border-radius-medium);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    gap: 15px;
+}
+
+.juego-item:hover {
+    transform: translateX(5px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-soft);
+}
+
+.juego-icono {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: var(--shadow-soft);
+}
+
+.juego-info h4 {
+    color: var(--color-principal);
+    font-family: 'Fredoka', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.juego-info {
+    flex: 1;
+}
+
+.juego-info p {
+    color: var(--color-parrafo);
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Botón de play */
+.play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-soft);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.play-button i {
+    font-size: 1.5rem;
+    margin-left: 3px;
+    color: white;
+}
+
+.play-button:hover {
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-principal) 100%);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(41, 128, 185, 0.4);
+}
+
+.play-button:active {
+    transform: scale(0.95);
+}
+
+
+
+/* Responsive mejorado */
 @media screen and (max-width: 1200px) {
-    #Foto {
-        height: 22.5vw;
-        width: 40vw;
-        top: 16vw;
-        right: 4vw;
+    .flex-container {
+        padding: 15px;
     }
+    
+    .grid-1 {
+        width: 100%;
+        gap: 18px;
+    }
+    
     body h1 {
-        font-size: 4vw;
-        margin-top: 11vw;
-        margin-left: 4vw;
+        font-size: 2.5rem;
     }
-    p {
-        font-size: 2vw;
+    
+    .welcome-section p {
+        font-size: 1.2rem;
     }
-} */
+    
+    .juegos-disponibles {
+        max-width: 100%;
+    }
+    
+    .objetivos-section,
+    .contacto-section {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .flex-container {
+        padding: 10px;
+    }
+    
+    .grid-1 {
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .welcome-section {
+        padding: 25px;
+    }
+    
+    .objetivos-section,
+    .contacto-section {
+        padding: 30px;
+    }
+    
+    .objetivos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    
+    .info-cards {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flex-container {
+        padding: 5px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .grid-1 {
+        width: 100%;
+        gap: 12px;
+        margin-top: 2vh;
+    }
+    
+    body h1 {
+        font-size: 1.8rem;
+        margin: 10px 0;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin: 5px 0 20px 0;
+    }
+    
+    .welcome-section {
+        padding: 20px;
+        margin: 0 5px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-section p {
+        font-size: 1rem;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .info-card {
+        padding: 15px;
+    }
+    
+    .info-card i {
+        font-size: 1.5rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1rem;
+    }
+    
+    .info-card p {
+        font-size: 0.8rem;
+    }
+    
+    .objetivos-section,
+    .contacto-section {
+        padding: 20px;
+        margin: 0 5px;
+    }
+    
+    .objetivos-section h2,
+    .contacto-section h2 {
+        font-size: 1.6rem;
+        margin: 0 0 20px 0;
+    }
+    
+    .objetivos-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .objetivo-item {
+        padding: 20px;
+    }
+    
+    .objetivo-item i {
+        font-size: 2rem;
+    }
+    
+    .objetivo-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .objetivo-item p {
+        font-size: 0.9rem;
+    }
+    
+    .juegos-disponibles {
+        padding: 20px;
+        margin: 0 5px;
+    }
+    
+    .juegos-disponibles h3 {
+        font-size: 1.4rem;
+        margin: 0 0 15px 0;
+    }
+    
+    .juegos-subtitle {
+        font-size: 1rem;
+        margin: 0 0 20px 0;
+    }
+    
+    .juego-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .juego-icono {
+        margin: 0 0 10px 0;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .juego-info h4 {
+        font-size: 1.1rem;
+        margin: 0 0 8px 0;
+    }
+    
+    .juego-info p {
+        text-align: center;
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .juego-features {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .feature-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    
+    .play-button i {
+        font-size: 1.2rem;
+    }
+    
+    .contacto-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .contacto-item {
+        padding: 20px;
+    }
+    
+    .contacto-item i {
+        font-size: 2rem;
+    }
+    
+    .contacto-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .contacto-item p {
+        font-size: 0.9rem;
+    }
+    
+    .contacto-section > p {
+        font-size: 1rem;
+        margin: 0 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .flex-container {
+        padding: 2px;
+    }
+    
+    .grid-1 {
+        gap: 8px;
+        margin-top: 1vh;
+    }
+    
+    body h1 {
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        margin: 5px 0 15px 0;
+    }
+    
+    .welcome-section {
+        padding: 15px;
+        margin: 0 2px;
+        margin-top: 20vh;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .info-cards {
+        gap: 6px;
+        margin-top: 12px;
+    }
+    
+    .info-card {
+        padding: 12px;
+    }
+    
+    .info-card i {
+        font-size: 1.3rem;
+    }
+    
+    .info-card h3 {
+        font-size: 0.9rem;
+    }
+    
+    .info-card p {
+        font-size: 0.75rem;
+    }
+    
+    .objetivos-section,
+    .contacto-section,
+    .juegos-disponibles {
+        padding: 15px;
+        margin: 150px 2px;
+    }
+    
+    .objetivos-section h2,
+    .contacto-section h2 {
+        font-size: 1.4rem;
+        margin: 0 0 15px 0;
+    }
+    
+    .objetivo-item,
+    .contacto-item {
+        padding: 15px;
+    }
+    
+    .objetivo-item i,
+    .contacto-item i {
+        font-size: 1.8rem;
+    }
+    
+    .objetivo-item h4,
+    .contacto-item h4 {
+        font-size: 1rem;
+    }
+    
+    .objetivo-item p,
+    .contacto-item p {
+        font-size: 0.8rem;
+    }
+    
+    .juegos-disponibles h3 {
+        font-size: 1.2rem;
+    }
+    
+    .juegos-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .juego-item {
+        padding: 12px;
+        margin: 10px 0;
+    }
+    
+    .juego-icono {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .juego-info h4 {
+        font-size: 1rem;
+    }
+    
+    .juego-info p {
+        font-size: 0.8rem;
+    }
+    
+    .feature-tag {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+    
+    .play-button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .play-button i {
+        font-size: 1rem;
+    }
+    
+    .contacto-section > p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Nuevas secciones mejoradas */
+
+/* Logo y contenedor */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.subtitle {
+    color: var(--color-parrafo);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 0 30px 0;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Tarjetas de información */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-accent);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    color: var(--color-principal);
+    font-family: 'Fredoka', cursive;
+    font-size: 1.1rem;
+    margin: 10px 0 5px 0;
+}
+
+.info-card p {
+    color: var(--color-parrafo);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Sección de objetivos */
+.objetivos-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-large);
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(15px);
+    border: 3px solid var(--color-accent);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.objetivos-section h2 {
+    color: var(--color-principal);
+    font-family: 'Fredoka', cursive;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.objetivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.objetivo-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-soft);
+}
+
+.objetivo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-principal);
+}
+
+.objetivo-item i {
+    font-size: 2.5rem;
+    color: var(--color-principal);
+    margin-bottom: 15px;
+}
+
+.objetivo-item h4 {
+    color: var(--color-principal);
+    font-family: 'Fredoka', cursive;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 15px 0 10px 0;
+}
+
+.objetivo-item p {
+    color: var(--color-parrafo);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mejoras en juegos */
+.juegos-subtitle {
+    color: var(--color-parrafo);
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 0 30px 0;
+    opacity: 0.8;
+}
+
+.juego-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.feature-tag {
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-soft);
+}
+
+
+
+/* Sección de contacto */
+.contacto-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-large);
+    padding: 40px;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: blur(15px);
+    border: 3px solid var(--color-info);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contacto-section h2 {
+    color: var(--color-info);
+    font-family: 'Fredoka', cursive;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-section > p {
+    color: var(--color-parrafo);
+    font-size: 1.1rem;
+    margin: 0 0 30px 0;
+    opacity: 0.8;
+}
+
+.contacto-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.contacto-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-soft);
+}
+
+.contacto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-info);
+}
+
+.contacto-item i {
+    font-size: 2.5rem;
+    color: var(--color-info);
+    margin-bottom: 15px;
+}
+
+.contacto-item h4 {
+    color: var(--color-info);
+    font-family: 'Fredoka', cursive;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 15px 0 10px 0;
+}
+
+.contacto-item p {
+    color: var(--color-parrafo);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Animaciones adicionales */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.logo {
+    animation: float 3s ease-in-out infinite;
+}
+

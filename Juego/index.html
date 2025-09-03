@@ -12,16 +12,18 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body id="body">
+    <!-- Botón de home independiente -->
+    <section id="Home">
+        <a href="../About/index.html"><i class="fa-solid fa-house"></i></a>
+    </section>
+    
     <header id="header"> 
-        <section id="Home">
-            <a href="../index.html"><i class="fa-solid fa-house"></i></a>
-        </section>
         <section id="explicacion">
             <h1>¿Como jugar?</h1>
             <h3>Arrastra el alimento hacia el diente feliz si es saludable, en caso contrario arrastralo hacia el diente triste.</h3>
             <div>
-                <img  id="MFE" src="../Imagenes/MuelaMal.png" alt="Comida sana">
                 <img  id="MTE" src="../Imagenes/MuelaBien.png" alt="Comida insana">
+                <img  id="MFE" src="../Imagenes/MuelaMal.png" alt="Comida sana">
             </div>
             <img src="Imagenes/ManoExplicacion.png" id="Mano" alt="Mano">
             <div id="AlimentoExplicacion">
@@ -33,10 +35,10 @@
     <section id="container" ondrop="drop(event)" ondragover="allowDrop(event)" class="cuerpoPagina">
         <div class="Clasificacion">
             <div class="tipo" id="Sano" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img  class="tipo" id="Sano" ondrop="drop(event)" ondragover="allowDrop(event)" src="../Imagenes/MuelaBien.png" alt="Comida sana">
+                <img class="tipo" src="../Imagenes/MuelaBien.png" alt="Comida sana">
             </div>
             <div class="tipo" id="Insano" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img class="tipo" id="Insano" ondrop="drop(event)" ondragover="allowDrop(event)" src="../Imagenes/MuelaMal.png" alt="Comida insana">
+                <img class="tipo" src="../Imagenes/MuelaMal.png" alt="Comida insana">
             </div>
         </div>
         <img id="C-1" name="Insano" ondragstart="drag(event)" draggable="true" class="alimento" src="Comida/Alfajor.png"/>

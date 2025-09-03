@@ -8,78 +8,133 @@
 	<script src="https://kit.fontawesome.com/5137b56f35.js" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<title>Dado animacion</title>
+	<title>Juego de Salud Bucal - Dado Educativo</title>
 </head>
 <body class="grid">
 	<header>
-		<a href="../../Inicio/index.html"><i class="fa-solid fa-house"></i></a>
+		<a href="../../About/index.html" title="Volver al inicio"><i class="fa-solid fa-house"></i></a>
 	</header>
+	<!-- Botón oculto para activar modo cepillado directo -->
+	<button id="ModoCepillado" class="btn-oculto" title="Activar modo cepillado directo">
+		<i class="fa-solid fa-tooth"></i>
+	</button>
 	<img src="./Cepilado.png" id="CepilloCartel">
 	<div class="container">
 		<img src="Bocaa.png" alt="boca" id="Boca" draggable="false">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoI.png" alt="diente" id="IncisivoI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoI2.png" alt="diente" id="IncisivoI2">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/CaninoI.png" alt="diente" id="CaninoI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarI.png" alt="diente" id="PremolarI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarI2.png" alt="diente" id="PremolarI2">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarI.png" alt="diente" id="MolarI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarI1.png" alt="diente" id="MolarI1">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarI2.png" alt="diente" id="MolarI2">
+		<img class="Dientes Desactivado" src="DN/IncisivoI.png" alt="diente" id="IncisivoI">
+		<img class="Dientes Desactivado" src="DN/IncisivoI2.png" alt="diente" id="IncisivoI2">
+		<img class="Dientes Desactivado" src="DN/CaninoI.png" alt="diente" id="CaninoI">
+		<img class="Dientes Desactivado" src="DN/PremolarI.png" alt="diente" id="PremolarI">
+		<img class="Dientes Desactivado" src="DN/PremolarI2.png" alt="diente" id="PremolarI2">
+		<img class="Dientes Desactivado" src="DN/MolarI.png" alt="diente" id="MolarI">
+		<img class="Dientes Desactivado" src="DN/MolarI1.png" alt="diente" id="MolarI1">
+		<img class="Dientes Desactivado" src="DN/MolarI2.png" alt="diente" id="MolarI2">
 		<!-- LADO DERECHO DE LOS DIENTES -->
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoD.png" alt="diente" id="IncisivoD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoD2.png" alt="diente" id="IncisivoD2">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/CaninoD.png" alt="diente" id="CaninoD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarD.png" alt="diente" id="PremolarD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarD2.png" alt="diente" id="PremolarD2">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarD.png" alt="diente" id="MolarD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarD1.png" alt="diente" id="MolarD1">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarD2.png" alt="diente" id="MolarD2">
+		<img class="Dientes Desactivado" src="DN/IncisivoD.png" alt="diente" id="IncisivoD">
+		<img class="Dientes Desactivado" src="DN/IncisivoD2.png" alt="diente" id="IncisivoD2">
+		<img class="Dientes Desactivado" src="DN/CaninoD.png" alt="diente" id="CaninoD">
+		<img class="Dientes Desactivado" src="DN/PremolarD.png" alt="diente" id="PremolarD">
+		<img class="Dientes Desactivado" src="DN/PremolarD2.png" alt="diente" id="PremolarD2">
+		<img class="Dientes Desactivado" src="DN/MolarD.png" alt="diente" id="MolarD">
+		<img class="Dientes Desactivado" src="DN/MolarD1.png" alt="diente" id="MolarD1">
+		<img class="Dientes Desactivado" src="DN/MolarD2.png" alt="diente" id="MolarD2">
 		<!-- DIENTES INFERIORES LADO DERECHO -->
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarAbajoD.png" alt="diente" id="MolarAbajoD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarAbajoD1.png" alt="diente" id="MolarAbajoD1">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarAbajoD2.png" alt="diente" id="MolarAbajoD2">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarAbajoD.png" alt="diente" id="PremolarAbajoD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarAbajoD1.png" alt="diente" id="PremolarAbajoD1">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/CaninoAbajoD.png" alt="diente" id="CaninoAbajoD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoAbajoD.png" alt="diente" id="IncisivoAbajoD">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoAbajoD1.png" alt="diente" id="IncisivoAbajoD1">
+		<img class="Dientes Desactivado" src="DN/MolarAbajoD.png" alt="diente" id="MolarAbajoD">
+		<img class="Dientes Desactivado" src="DN/MolarAbajoD1.png" alt="diente" id="MolarAbajoD1">
+		<img class="Dientes Desactivado" src="DN/MolarAbajoD2.png" alt="diente" id="MolarAbajoD2">
+		<img class="Dientes Desactivado" src="DN/PremolarAbajoD.png" alt="diente" id="PremolarAbajoD">
+		<img class="Dientes Desactivado" src="DN/PremolarAbajoD1.png" alt="diente" id="PremolarAbajoD1">
+		<img class="Dientes Desactivado" src="DN/CaninoAbajoD.png" alt="diente" id="CaninoAbajoD">
+		<img class="Dientes Desactivado" src="DN/IncisivoAbajoD.png" alt="diente" id="IncisivoAbajoD">
+		<img class="Dientes Desactivado" src="DN/IncisivoAbajoD1.png" alt="diente" id="IncisivoAbajoD1">
 		<!-- DIENTES INFERIORES LADO IZQUIERDO -->
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarAbajoI.png" alt="diente" id="MolarAbajoI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarAbajoI1.png" alt="diente" id="MolarAbajoI1">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/MolarAbajoI2.png" alt="diente" id="MolarAbajoI2">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarAbajoI.png" alt="diente" id="PremolarAbajoI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/PremolarAbajoI1.png" alt="diente" id="PremolarAbajoI1">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/CaninoAbajoI.png" alt="diente" id="CaninoAbajoI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoAbajoI.png" alt="diente" id="IncisivoAbajoI">
-		<img class="Dientes Desactivado" onclick=CambiarImagen(this.id) src="DN/IncisivoAbajoI1.png" alt="diente" id="IncisivoAbajoI1">
+		<img class="Dientes Desactivado" src="DN/MolarAbajoI.png" alt="diente" id="MolarAbajoI">
+		<img class="Dientes Desactivado" src="DN/MolarAbajoI1.png" alt="diente" id="MolarAbajoI1">
+		<img class="Dientes Desactivado" src="DN/MolarAbajoI2.png" alt="diente" id="MolarAbajoI2">
+		<img class="Dientes Desactivado" src="DN/PremolarAbajoI.png" alt="diente" id="PremolarAbajoI">
+		<img class="Dientes Desactivado" src="DN/PremolarAbajoI1.png" alt="diente" id="PremolarAbajoI1">
+		<img class="Dientes Desactivado" src="DN/CaninoAbajoI.png" alt="diente" id="CaninoAbajoI">
+		<img class="Dientes Desactivado" src="DN/IncisivoAbajoI.png" alt="diente" id="IncisivoAbajoI">
+		<img class="Dientes Desactivado" src="DN/IncisivoAbajoI1.png" alt="diente" id="IncisivoAbajoI1">
 	</div>
 	<div class="container">
 		<div id="Dado" class="dice">
 			<div class="side one">
-			  <h1 class="numero">?</h1>
+			  <div class="numero-container">
+			  	<h1 class="numero" data-numero="1">1</h1>
+			  	<div class="circulos" data-circulos="1">
+			  		<div class="circulo centro"></div>
+			  	</div>
+			  </div>
 			</div>
 			<div class="side two">
-			   <h1 id="NumeroAleatorio" class="numero">?</h1>
+			   <div class="numero-container">
+			   	<h1 id="NumeroAleatorio" class="numero" data-numero="2">2</h1>
+			   	<div class="circulos" data-circulos="2">
+			   		<div class="circulo esquina-superior-izquierda"></div>
+			   		<div class="circulo esquina-inferior-derecha"></div>
+			   	</div>
+			   </div>
 			</div>
 			<div class="side three">
-			   <h1 class="numero">?</h1>
+			   <div class="numero-container">
+			   	<h1 class="numero" data-numero="3">3</h1>
+			   	<div class="circulos" data-circulos="3">
+			   		<div class="circulo esquina-superior-izquierda"></div>
+			   		<div class="circulo centro"></div>
+			   		<div class="circulo esquina-inferior-derecha"></div>
+			   	</div>
+			   </div>
 			</div>
 			<div class="side four">
-			   <h1 class="numero">?</h1>
+			   <div class="numero-container">
+			   	<h1 class="numero" data-numero="4">4</h1>
+			   	<div class="circulos" data-circulos="4">
+			   		<div class="circulo esquina-superior-izquierda"></div>
+			   		<div class="circulo esquina-superior-derecha"></div>
+			   		<div class="circulo esquina-inferior-izquierda"></div>
+			   		<div class="circulo esquina-inferior-derecha"></div>
+			   	</div>
+			   </div>
 			</div>
 			<div class="side five">
-			   <h1 class="numero">?</h1>
+			   <div class="numero-container">
+			   	<h1 class="numero" data-numero="5">5</h1>
+			   	<div class="circulos" data-circulos="5">
+			   		<div class="circulo esquina-superior-izquierda"></div>
+			   		<div class="circulo esquina-superior-derecha"></div>
+			   		<div class="circulo centro"></div>
+			   		<div class="circulo esquina-inferior-izquierda"></div>
+			   		<div class="circulo esquina-inferior-derecha"></div>
+			   	</div>
+			   </div>
 			</div>
 			<div class="side six">
-			   <h1 class="numero">?</h1>
+			   <div class="numero-container">
+			   	<h1 class="numero" data-numero="6">6</h1>
+			   	<div class="circulos" data-circulos="6">
+			   		<div class="circulo esquina-superior-izquierda"></div>
+			   		<div class="circulo esquina-superior-derecha"></div>
+			   		<div class="circulo centro-izquierda"></div>
+			   		<div class="circulo centro-derecha"></div>
+			   		<div class="circulo esquina-inferior-izquierda"></div>
+			   		<div class="circulo esquina-inferior-derecha"></div>
+			   	</div>
+			   </div>
 			</div>
 		</div>
-		<a id="Girar" onClick=AnimacionGirar()>Girar</a>
+		<button id="Girar" class="btn-girar">
+			<i class="fa-solid fa-dice"></i>
+			<span>TIRAR DADO</span>
+		</button>
 		<section id="CajaConstelacion">
+			<div class="instrucciones">
+				<p id="TextoInstrucciones">Caries a descubrir:</p>
+			</div>
 			<div id="NumeroConstelacion">
 			</div>
 		</section>
 	</div>
-	<script id="SrcScript" src="../DientesSuciosMini.js"></script>
+	<script src="dadoMejorado.js"></script>
 </body>
 </html>

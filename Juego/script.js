@@ -13,7 +13,10 @@ juego.remove();
 
 function SaltarIntro(){
     presentacion.remove();
-    document.getElementById("header").style.height = "0";
+    const header = document.getElementById("header");
+    header.style.height = "0";
+    header.classList.add("hidden");
+    document.body.classList.add("header-hidden");
     document.body.appendChild(juego);    
 }
 
@@ -31,8 +34,16 @@ function allowDrop(ev){
 //Agrega elemento al contenedor
 function drop(ev){  
     ev.preventDefault();
-    IdContenedor = ev.target.id;
+    
+    // Obtener el ID del contenedor correcto
+    let target = ev.target;
+    while (target && !target.id) {
+        target = target.parentElement;
+    }
+    
+    IdContenedor = target ? target.id : '';
     claseContenedor = ev.target.className;
+    
     if(i<1){
         EsValido(ElementoActual, IdContenedor, claseContenedor);
     }
@@ -42,11 +53,18 @@ function drop(ev){
 var boton_cerrar= document.getElementById("cerrar");
 
 //Chequea validez
-function EsValido(elementoId,target,claseDestino){
-    if(elementoId == target && claseDestino != 'alimento' && claseDestino != 'cuerpoPagina'){
-       AbrirModalG();
-    }else if(elementoId != target && claseDestino != 'alimento' && claseDestino != 'cuerpoPagina'){
-        AbrirModal();
+function EsValido(elementoId, target, claseDestino){
+    console.log('Validando:', elementoId, 'vs', target, 'clase:', claseDestino);
+    
+    // Solo validar si se soltó en una zona de clasificación válida
+    if(target === 'Sano' || target === 'Insano'){
+        if(elementoId === target){
+            // Respuesta correcta
+            AbrirModalG();
+        } else {
+            // Respuesta incorrecta
+            AbrirModal();
+        }
     }
 }
 

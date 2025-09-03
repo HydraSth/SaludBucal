@@ -2,31 +2,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;600;700;800;900&display=swap');
 
 :root{
-    --color-inverso: rgb(244, 244, 244);
-    --color-secundario: rgb(171 169 255 / 86%);
-    --color-principal:rgb(55, 48, 189);
-    --color-parrafo:#777581;
+    --color-inverso: rgb(255, 255, 255);
+    --color-secundario: #3498DB;
+    --color-principal: #2980B9;
+    --color-parrafo: #2C3E50;
+    --color-accent: #85C1E9;
+    --color-success: #27AE60;
+    --color-warning: #F39C12;
+    --color-danger: #E74C3C;
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --border-radius-large: 25px;
+    --border-radius-medium: 15px;
 }
 
 body{
     font-family: 'Biryani', sans-serif;
-    font-weight:900; 
-    background-color: var(--color-inverso);
+    font-weight: 700; 
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #E1F5FE 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .flex-container{
-    background-color: var(--color-inverso);
+    background: transparent;
     grid-template-columns: 50vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
     h1{
-        font-size: 3em;
+        font-size: 3.5em;
         margin: 0.3em 0;
         color: var(--color-principal);
         font-weight: 900;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        line-height: 1.2;
     }
     
     .grid-1{
@@ -34,16 +50,26 @@ body{
     }
 
     .grid-1 h2{
-        font-size: 2em;
+        font-size: 2.2em;
         color: var(--color-secundario);
         margin: 0;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        font-weight: 800;
     }
 
 p{
     color: var(--color-parrafo);
     max-width: 35vw;
-    font-size: 1.5vw;
-    text-align: justify;
+    font-size: 1.8em;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(10px);
 }
 
 #Burbuja{
@@ -57,61 +83,117 @@ span{
 
 header{
     position: absolute;
-    background-color: var(--color-principal);
-    height: 150px;
-    width: 150px;
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    height: 120px;
+    width: 120px;
     text-align: center;
-    border-radius: 0 0 80px 80px;
+    border-radius: 0 0 60px 60px;
     top: 0;
-    left: 70px;
+    left: 50px;
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+header:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 15px 50px rgba(41, 128, 185, 0.4);
 }
 
 .fa-house{
     color: white;
-    font-size: 40px;
-    border: 1px solid white;
-    padding: 18px;
-    margin: 30px;
-    border-radius: 45px;
-    transition: all .5s ease-in-out; 
+    font-size: 35px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    margin: 20px;
+    border-radius: 35px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .fa-house:hover{
     color: var(--color-principal);
-    transition: all .5s ease-in-out;   
-    background-color: var(--color-inverso);    
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 #BotonJugar{
     text-decoration: none;
     display: inline-block;
-    padding: 15px;
-    color: var(--color-principal);
-    margin-top: 1rem;
-    border: 0.3vw solid var(--color-principal);
-    border-radius: 15px;
-    font-size: 1.5em;
-    transition: all .5s ease-in-out;
+    padding: 20px 30px;
+    color: white;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+    border: none;
+    border-radius: var(--border-radius-large);
+    font-size: 1.8em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
 }
 
 #BotonJugar:hover{
-    background-color: var(--color-principal);
-    color: #F4F4F4;
-    transition: all .5s ease-in-out;        
+    background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-principal) 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(41, 128, 185, 0.4);
+    color: white;
+}
+
+#BotonJugar:active{
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
+}
+
+#BotonJugar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+#BotonJugar:hover::before{
+    left: 100%;
 }
 
 .Dientes{
-    width: 11vw;
+    width: 12vw;
     animation: 4000ms Girar infinite;
     position: absolute;
     right: 30vw;
     top: 150px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.Dientes:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
 }
 
 #DienteMal{
     position: absolute;
     right: 25vw;
     top: 50vh;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+#DienteMal:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
 }
 /* Animacion */
 
