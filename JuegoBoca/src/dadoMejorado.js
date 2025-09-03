@@ -154,7 +154,7 @@ class DadoMejorado {
             this.actualizarConstelacion(this.numeroActual);
             
             // Habilitar edición de dientes según el modo
-            if (this.modoCepilladoDirecto) {
+            if (this.modoCepilladoDirecto || this.estanSuciosDientes) {
                 this.habilitarEdicionDeDientesLimpieza();
             } else {
                 this.habilitarEdicionDeDientes();
@@ -178,22 +178,22 @@ class DadoMejorado {
     generarNumeroAleatorio() {
         let numeroAleatorio;
         
-        if (this.contador >= 26) {
-            // Cuando quedan pocos dientes, limitar el número máximo
-            if (this.max > 0) {
-                numeroAleatorio = Math.floor(Math.random() * this.max) + 1;
-                this.max = this.max - numeroAleatorio;
-            } else {
-                numeroAleatorio = 1;
-            }
+        // Calcular cuántos dientes quedan por pintar
+        const dientesRestantes = 32 - this.dientesSucios.length;
+        
+        if (dientesRestantes <= 6 && dientesRestantes > 0) {
+            // Cuando quedan 6 o menos dientes, usar el número exacto
+            numeroAleatorio = dientesRestantes;
+            console.log(`🎯 Dientes restantes: ${dientesRestantes}, dado mostrará: ${numeroAleatorio}`);
         } else {
+            // Cuando quedan más de 6 dientes, usar número aleatorio normal
             numeroAleatorio = Math.floor(Math.random() * 6) + 1;
         }
         
         this.contador += numeroAleatorio;
         
-        // Verificar si se completó el juego
-        if (this.contador >= 33) {
+        // Verificar si se completó el juego - solo cuando TODOS los dientes estén sucios
+        if (this.dientesSucios.length >= 32) { // 32 es el número total de dientes
             this.mostrarCepilloCartel();
             this.actualizarMensaje('🎉 ¡Todos los dientes están sucios! ¡Ahora a limpiarlos!');
             this.max = 6;
@@ -215,6 +215,10 @@ class DadoMejorado {
                     this.cambiarImagenALimpios(e.target.id);
                 });
             });
+            
+            // Habilitar el botón de tirar dado para continuar el juego
+            this.botonGirar.disabled = false;
+            this.botonGirar.style.cursor = 'pointer';
         }
         
         return numeroAleatorio;
@@ -256,10 +260,15 @@ class DadoMejorado {
             // Reproducir sonido mágico (si está disponible)
             this.reproducirSonidoMagico();
             
-            // Limpiar efectos después de la animación
+            // Limpiar efectos después de la animación y habilitar dientes
             setTimeout(() => {
                 cepilloCartel.classList.remove('Modal');
                 this.limpiarEfectosMagicos();
+                
+                // Habilitar edición de dientes para modo limpieza después del cartel
+                if (this.estanSuciosDientes) {
+                    this.habilitarEdicionDeDientesLimpieza();
+                }
             }, 3500);
         }
     }
@@ -626,11 +635,19 @@ class DadoMejorado {
         
         // LIMPIAR ESTADO COMPLETAMENTE (PERO NO dientesSucios)
         this.contadorClicks = 0;
-        this.yaPinto = false;
         this.contadorCirculosRellenos = 0;
         
-        // Actualizar mensaje de finalización
-        this.actualizarMensaje('✅ ¡Turno completado! ¡Tira el dado de nuevo!');
+        // Solo resetear yaPinto si NO estamos en modo cepillado
+        if (!this.estanSuciosDientes && !this.modoCepilladoDirecto) {
+            this.yaPinto = false;
+        }
+        
+        // Actualizar mensaje de finalización según el modo
+        if (this.estanSuciosDientes || this.modoCepilladoDirecto) {
+            this.actualizarMensaje('✅ ¡Turno de cepillado completado! ¡Tira el dado de nuevo!');
+        } else {
+            this.actualizarMensaje('✅ ¡Turno completado! ¡Tira el dado de nuevo!');
+        }
         
         // Habilitar botón para siguiente tirada (el texto ya se restauró cuando salió el número)
         this.botonGirar.disabled = false;
@@ -638,6 +655,7 @@ class DadoMejorado {
         
         console.log(`Turno finalizado. Botón habilitado para siguiente tirada`);
         console.log(`Estado limpio: yaPinto=${this.yaPinto}, contadorClicks=${this.contadorClicks}`);
+        console.log(`Modo cepillado: ${this.estanSuciosDientes || this.modoCepilladoDirecto}`);
         console.log(`Array dientesSucios después de finalizar:`, this.dientesSucios);
     }
     
